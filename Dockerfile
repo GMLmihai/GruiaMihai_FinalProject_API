@@ -1,0 +1,20 @@
+FROM openjdk:8-jre-alpine
+
+RUN mkdir /project
+
+COPY ./target/chatroomGML-0.0.1-SNAPSHOT.jar /project/
+
+WORKDIR /project/
+
+RUN ls
+
+CMD AUTH_PRIVATE_KEY="MIIBOgIBAAJAf9E8eNTXjsgAbT98pRvbZit8jTh9whyG2Fe/34+8sFnJqDJoC5zGsNcyLk/DIVeI3REHcR0UlwgCEaN8kNs12wIDAQABAkAdLzVTkaW2YExYpYpcWMP7zCogRKnSTJkthLu23CcFTOhjJFYrsXseA1j7ppjvhprsBJmk6eVPUcyDwXNeVhKBAiEAvPsb5IVG9zaZhWwdiEfLTZC7yNs8sZsh+kJ1fxilJmsCIQCtJU8D5o4UvPzAR00ufvP/2vN/KIgkJMRdhtCHSwWqUQIhAJsZUEQWKi8crZT2Laq6mZ14StZHMKHnW1SElOARvwEvAiEAhQnJsMGSIjUkL8mZcERzzv+5YNcP5FWr3AEecRYgAEECICDWHN1U+Xw4YJU/d8fj4/i45t3ltDnBjnj8f5Mi8dkn"
+
+    AUTH_PUBLIC_KEY="MFswDQYJKoZIhvcNAQEBBQADSgAwRwJAf9E8eNTXjsgAbT98pRvbZit8jTh9whyG2Fe/34+8sFnJqDJoC5zGsNcyLk/DIVeI3REHcR0UlwgCEaN8kNs12wIDAQAB"
+
+
+    AUTH_SIGNATURE="signatureGML"
+    MONGO_USER="dbGML"
+    MONGO_PASSWORD="GMLpassword"
+    MONGO_CLUSTER="chatroomcluster.ftcf8.mongodb.net"
+    MONGO_DB_NAME="devDB" java -jar chatroomGML-0.0.1-SNAPSHOT.jar
